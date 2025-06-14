@@ -1,0 +1,799 @@
+/* === cv1.css (Version sặc sỡ thanh lịch) === */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f0f0f, #181818);
+  color: #f0f0f0;
+  font-family: "Dinosaurs Are Alive", sans-serif;
+}
+
+/* Header */
+.profile-header {
+  text-align: center;
+  margin: 65px auto;
+  max-width: 1300px;
+  padding: 26px;
+}
+
+.profile-header p {
+  color: #ddd; /* Hoặc #cccccc cho màu xám sáng, đẹp trên nền đen */
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.profile-image img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.personal-info {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.personal-info h1 {
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.greeting {
+  font-size: 20px;
+  color: #5a5a5a;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Career Goals */
+.career-goals {
+  padding: 40px;
+}
+
+.career-goals h3 {
+  text-align: center;
+  font-size: 36px;
+  color: #ff6f61;
+  margin-bottom: 40px;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.goal-item p {
+  width: 266px;
+  font-weight: 500;
+}
+
+.progress-bar-container {
+  flex: 1;
+  background: #eee;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 16px;
+  border-radius: 67px;
+  background: linear-gradient(to right, #ff6f61, #ffd54f);
+  width: 0;
+  transition: 1s ease;
+}
+
+.progress-percentage {
+  width: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Skills */
+.skills {
+  padding: 40px;
+}
+
+.skills h3 {
+  text-align: center;
+  font-size: 36px;
+  color: #ff6f61;
+  margin-bottom: 40px;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 106px; /* tăng khoảng cách giữa các skill */
+  flex-wrap: wrap;
+}
+
+.skill-item {
+  text-align: center;
+}
+.circular-progress {
+  position: relative;
+  width: 210px; /* tăng 1/3 kích thước vòng tròn */
+  height: 210px;
+  margin: 0 auto 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  position: absolute;
+}
+
+.progress-ring-track {
+  stroke: #ddd;
+}
+
+.progress-ring-fill {
+  stroke-linecap: round;
+}
+
+.progress-value {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* Projects */
+.projects {
+  padding: 67px;
+  background-color: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 67px 0;
+  text-align: center;
+}
+
+.projects h3 {
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 53px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 53px;
+}
+
+.project-description {
+  text-align: left;
+  max-width: 933px;
+}
+
+.project-description h4 {
+  color: #ff6f61;
+  font-size: 37px;
+  margin-bottom: 27px;
+}
+
+.project-description p {
+  color: #dddddd;
+  font-size: 21px;
+  line-height: 2.13;
+}
+
+.project-image img {
+  width: 667px;
+  max-width: 90%;
+  border-radius: 13px;
+  box-shadow: 0 13px 27px rgba(0, 0, 0, 0.2);
+}
+
+.project-link {
+  margin-top: 20px;
+}
+
+.project-link a {
+  font-size: 21px;
+  text-decoration: none;
+  color: #ff6f61;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.project-link a:hover {
+  color: #ffd54f;
+}
+
+/* Contact */
+.contact {
+  padding: 40px;
+}
+
+.contact h3 {
+  text-align: center;
+  font-size: 36px;
+  color: #ff6f61;
+  margin-bottom: 30px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-button {
+  background: #ff6f61;
+  color: #fff;
+  font-size: 24px;
+  padding: 15px 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background: #ffd54f;
+}
+.details-section {
+  padding: 40px;
+  color: #333; /* Đổi lại màu chữ cho nổi bật trên nền trắng */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 40px 0;
+}
+
+.details-section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.details-section h2::after {
+  content: "";
+  display: block;
+  margin: 10px auto 0;
+  width: 60%;
+  height: 2px;
+  background-color: #555;
+}
+
+.career-objective h3,
+.hobbies h3 {
+  font-size: 28px;
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.career-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.career-item span:first-child {
+  width: 220px;
+}
+
+.progress-bar {
+  background-color: #333;
+  flex: 1;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #0066ff, #00ccff);
+  border-radius: 10px;
+}
+
+.percentage {
+  width: 50px;
+  text-align: right;
+}
+
+/* Hobbies */
+
+.hobby-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.hobby-item {
+  text-align: center;
+}
+
+.hobby-item i {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.hobby-item p {
+  margin: 0;
+  font-size: 16px;
+}
+.hobbies-section {
+  padding: 50px;
+  background-color: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.hobby-circle {
+  position: relative;
+  width: 400px; /* <-- To hơn trước */
+  height: 400px;
+  margin: 50px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid #ff6f61;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* <-- Shadow mạnh hơn */
+  transition: 0.5s ease;
+}
+
+.slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.slice:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 4 góc */
+
+.top-left {
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #ff512f, #f09819);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, #cc2b5e, #753a88);
+}
+
+.slice i {
+  font-size: 42px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Phần Giải Thưởng */
+.awards-section {
+  padding: 53px;
+  border-radius: 20px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+  margin: 53px 0;
+  text-align: center;
+}
+
+.awards-section h3 {
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 27px;
+}
+
+.award-note {
+  color: #dddddd;
+  font-size: 21px;
+}
+
+/* Phần Ngôn Ngữ */
+.languages-section {
+  padding: 53px;
+  border-radius: 20px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.1);
+  margin: 53px 0;
+}
+
+.languages-section h3 {
+  text-align: center;
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 53px;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 26px;
+}
+
+.language-item span:first-child {
+  width: 266px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.language-bar {
+  background-color: #eee;
+  flex: 1;
+  height: 20px;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.language-fill {
+  height: 100%;
+  background: linear-gradient(to right, #ff6f61, #ffd54f);
+  border-radius: 26px;
+  transition: 1s ease;
+}
+
+.language-percent {
+  width: 80px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+h2,
+h3,
+h4 {
+  color: #ffffff;
+}
+p,
+span {
+  color: #dddddd;
+}
+.skills,
+.projects,
+.languages-section,
+.details-section,
+.awards-section,
+.hobbies-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+.personal-info h1 {
+  font-size: 60px;
+  color: #ff6f61;
+  margin-bottom: 25px;
+}
+
+.profile-header p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+.details-section h2,
+.details-section h3,
+.career-objective h3,
+.hobbies h3,
+.hobbies-section h3 {
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 40px;
+}
+.contact-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact-section h2 {
+  font-size: 48px;
+  color: #ff6f61;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #666;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  width: 150px;
+  height: 80px;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  color: #fff;
+}
+
+.contact-btn i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.contact-btn.tiktok {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.contact-btn.facebook {
+  background-color: #1877f2;
+}
+
+.contact-btn.github {
+  background-color: #000000;
+}
+.contact-btn.gmail {
+  background-color: #dd4b39;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+.hobby-award-wrapper {
+  display: flex;
+  justify-content: space-between; /* giãn đều 2 khối ra full chiều ngang */
+  align-items: flex-start;
+  max-width: 1000px; /* giới hạn width bằng phần "Thông tin chi tiết" */
+  margin: 50px auto; /* căn giữa toàn bộ */
+  gap: 80px;
+}
+
+.hobbies-section,
+.awards-section {
+  flex: 1;
+  text-align: center;
+}
+/* Jurassic Background Style */
+
+.jurassic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.jurassic-background img.bg-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: brightness(0.7) contrast(1.1);
+}
+/* Jurassic Background Style */
+
+.jurassic-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.jurassic-background img.bg-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: brightness(0.7) contrast(1.1);
+}
+.dino-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.dino {
+  position: absolute;
+  bottom: 20px;
+  width: 300px;
+  transition: transform 0.5s;
+}
+
+/* Dino2 bên trái, xoay mặt về phải */
+.dino-left {
+  left: 5%;
+  transform: scaleX(1); /* không còn lật ngược vì đã xoay sẵn ảnh */
+  animation: dino2-bounce 8s infinite ease-in-out;
+}
+
+/* Dino1 bên phải */
+.dino-right {
+  right: 5%;
+  animation: dino1-bounce 10s infinite ease-in-out;
+}
+
+@keyframes dino1-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dino2-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.progress-bar-dino {
+  position: relative;
+  height: 24px;
+  width: 320px;
+  background: #e1f6d1;
+  border-radius: 20px;
+  margin: 0 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #43ea44, #a6f15e);
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 1s cubic-bezier(0.77, 0, 0.18, 1);
+  z-index: 1;
+}
+
+.dino-head {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: auto;
+  transform: translateY(-50%);
+  z-index: 3;
+  left: 0;
+  pointer-events: none;
+  transition: left 1s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.progress-percent {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: #43ea44;
+  z-index: 4;
+  pointer-events: none;
+  transition: left 1s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.language-bar-dino {
+  position: relative;
+  height: 16px;
+  width: 400px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  margin: 0 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.language-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff6f61, #ffd54f);
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: width 1s cubic-bezier(0.77, 0, 0.18, 1);
+  z-index: 1;
+}
+
+.footprint {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: auto;
+  transform: translateY(-50%);
+  z-index: 3;
+  left: 0;
+  pointer-events: none;
+  transition: left 1s cubic-bezier(0.77, 0, 0.18, 1);
+  /* Có thể thêm hiệu ứng nhún/nhảy nếu muốn */
+}
+
+.language-percent {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff6f61;
+  z-index: 4;
+  pointer-events: none;
+  transition: left 1s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.back-home-btn {
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  z-index: 9999;
+  background: #222e;
+  color: #ff6f61;
+  padding: 12px 20px 12px 16px;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.back-home-btn i {
+  font-size: 22px;
+}
+
+.back-home-btn:hover {
+  background: #ff6f61;
+  color: #fff;
+}

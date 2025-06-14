@@ -1,0 +1,648 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a1325;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* căn giữa dọc */
+  align-items: center; /* căn giữa ngang */
+  position: relative;
+  z-index: 10;
+  padding-top: 48px; /* để không dính lên sát mép */
+  box-sizing: border-box;
+}
+
+.title {
+  color: white;
+  font-size: 54px;
+  font-weight: bold;
+  margin-bottom: 48px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: "Rock Salt", Arial, sans-serif;
+  text-shadow: 2px 2px 8px #0007; /* Giúp chữ nổi hơn trên nền tối */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #2a223a;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 367px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.45);
+  flex: 0 0 367px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover; /* Giữ nguyên, giúp ảnh luôn đẹp và không méo */
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+.card h2 {
+  font-size: 27px;
+  color: white;
+  margin: 17px 0 10px;
+}
+
+.card p {
+  font-size: 22px;
+  padding: 0 16px 16px;
+  color: #ccc;
+}
+
+.card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* === VINYL + SOUNDWAVE BACKGROUND === */
+.vinyl-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: url("img/band.jpg") center center/cover no-repeat;
+}
+
+/* ... (các hiệu ứng động giữ nguyên như cũ) ... */
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1600px) {
+  .container {
+    max-width: 95vw;
+    gap: 28px;
+  }
+  .card {
+    width: 310px;
+    flex: 0 0 310px;
+  }
+}
+@media (max-width: 1300px) {
+  .container {
+    gap: 18px;
+  }
+  .card {
+    width: 240px;
+    flex: 0 0 240px;
+  }
+  .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1020px) {
+  .container {
+    gap: 12px;
+  }
+  .card {
+    width: 90vw;
+    max-width: 340px;
+    flex: 0 0 90vw;
+  }
+}
+@media (max-width: 720px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .card {
+    width: 92vw;
+    max-width: 98vw;
+    flex: 1 1 auto;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+/* === VINYL + SOUNDWAVE BACKGROUND === */
+.vinyl-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Vinyl */
+.vinyl {
+  position: absolute;
+  left: 4vw;
+  bottom: 3vw;
+  width: 330px;
+  height: 330px;
+  background: radial-gradient(circle at 55% 45%, #222 80%, #111 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 80px 20px #0007, 0 0 0 10px #ff65a3a8, 0 0 0 24px #2ec4b6a0;
+  animation: vinyl-rotate 10s linear infinite;
+}
+.vinyl::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  background: radial-gradient(circle at 60% 40%, #ff65a3 80%, #2ec4b6 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px #fff4, 0 0 0 3px #fff6;
+}
+
+@keyframes vinyl-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sóng nhạc */
+.waves {
+  position: absolute;
+  left: 15vw;
+  bottom: 8vw;
+  width: 50vw;
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+.wave {
+  width: 9px;
+  height: 95px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, #2ec4b6, #fff, #ff65a3, #2ec4b6 95%);
+  animation: wave-move 1.3s infinite linear alternate;
+  box-shadow: 0 0 10px 2px #ff65a399;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.4s;
+  height: 130px;
+}
+.wave:nth-child(3) {
+  animation-delay: 0.8s;
+  height: 70px;
+}
+
+@keyframes wave-move {
+  0% {
+    transform: scaleY(0.7);
+  }
+  40% {
+    transform: scaleY(1.15);
+  }
+  60% {
+    transform: scaleY(0.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+/* === VINYL + WAVES giữ nguyên như đã hướng dẫn ở trên! === */
+
+/* MUSIC ICONS & ANIMATION */
+.music-icons {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Guitar (dùng box + before/after vẽ cổ đàn, thùng đàn) */
+.guitar {
+  position: absolute;
+  left: 110px;
+  bottom: 250px;
+  width: 45px;
+  height: 95px;
+  background: linear-gradient(135deg, #fbb13c 60%, #ffe1a1 100%);
+  border-radius: 50% 50% 65% 65% / 60% 60% 80% 80%;
+  box-shadow: 0 0 16px 4px #fbb13c88;
+  animation: guitar-vibrate 1.2s infinite alternate;
+}
+.guitar::before {
+  content: "";
+  position: absolute;
+  top: -38px;
+  left: 18px;
+  width: 10px;
+  height: 40px;
+  background: linear-gradient(90deg, #8d5524 60%, #d7b899 100%);
+  border-radius: 8px;
+}
+.guitar::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 23px;
+  width: 5px;
+  height: 15px;
+  background: #444;
+  border-radius: 10px;
+}
+
+/* Microphone */
+.mic {
+  position: absolute;
+  left: 310px;
+  bottom: 310px;
+  width: 19px;
+  height: 38px;
+  background: #c6c6c6;
+  border-radius: 15px 15px 20px 20px/17px 17px 30px 30px;
+  border-bottom: 4px solid #212121;
+  box-shadow: 0 0 8px #fff5, 0 0 0 6px #21212118;
+  animation: mic-shake 1.3s infinite alternate;
+}
+.mic::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  bottom: -23px;
+  width: 5px;
+  height: 25px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Drum */
+.drum {
+  position: absolute;
+  left: 220px;
+  bottom: 170px;
+  width: 53px;
+  height: 28px;
+  background: linear-gradient(180deg, #fa4659 70%, #fff 100%);
+  border-radius: 50% / 50% 50% 90% 90%;
+  border-bottom: 4px solid #fbb13c;
+  box-shadow: 0 0 8px #fa4659a0;
+  animation: drum-bounce 0.7s infinite cubic-bezier(0.6, 0.2, 0.7, 1);
+}
+.drum::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 19px;
+  width: 13px;
+  height: 20px;
+  border-radius: 6px;
+  background: #fbb13c;
+  transform: rotate(-10deg);
+  box-shadow: 10px 0 #fbb13c;
+}
+
+/* Nốt nhạc động */
+.note {
+  position: absolute;
+  bottom: 270px;
+  width: 14px;
+  height: 32px;
+  z-index: 2;
+  background: none;
+}
+.note::before,
+.note::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: #4f9deb;
+}
+.note::before {
+  left: 1px;
+  bottom: 0;
+  width: 13px;
+  height: 13px;
+  background: #4f9deb;
+}
+.note::after {
+  left: 9px;
+  bottom: 13px;
+  width: 5px;
+  height: 17px;
+  background: #4f9deb;
+  border-radius: 50% 50% 60% 60% / 100% 100% 50% 50%;
+  transform: rotate(-24deg);
+}
+
+/* Nốt nhạc vị trí và bay lên (có thể thêm nhiều nốt) */
+.note1 {
+  left: 170px;
+  animation: note-up 2.2s 0s infinite linear;
+}
+.note2 {
+  left: 240px;
+  animation: note-up 2.2s 0.8s infinite linear;
+}
+.note3 {
+  left: 320px;
+  animation: note-up 2.4s 1.1s infinite linear;
+}
+.note4 {
+  left: 390px;
+  animation: note-up 2.1s 1.5s infinite linear;
+}
+
+@keyframes guitar-vibrate {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}
+@keyframes mic-shake {
+  0% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+@keyframes drum-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes note-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(1.1);
+  }
+}
+/* Các sao sáng nhỏ */
+.music-star {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background: radial-gradient(
+    circle at 40% 50%,
+    #fff9,
+    #ffecb3 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.7;
+  z-index: 0;
+  animation: star-twinkle 3s infinite alternate;
+}
+.star1 {
+  left: 90vw;
+  top: 18vh;
+  animation-delay: 0s;
+}
+.star2 {
+  left: 7vw;
+  top: 35vh;
+  animation-delay: 1.3s;
+}
+.star3 {
+  left: 87vw;
+  top: 65vh;
+  animation-delay: 2.1s;
+}
+
+@keyframes star-twinkle {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* CD nhỏ */
+.cd-small {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #b2c2fd 60%,
+    #2544a3 95%,
+    transparent 100%
+  );
+  width: 38px;
+  height: 38px;
+  box-shadow: 0 0 14px 2px #63f3ff7a;
+  border: 2.5px solid #fdfdffcc;
+  z-index: 0;
+  animation: cd-rotate 8s linear infinite;
+}
+.cd1 {
+  left: 10vw;
+  top: 75vh;
+}
+.cd2 {
+  left: 93vw;
+  top: 38vh;
+}
+
+@keyframes cd-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Nốt nhạc lớn, nhiều kiểu hơn */
+.note-big {
+  position: absolute;
+  width: 34px;
+  height: 70px;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.note-b1 {
+  left: 77vw;
+  top: 67vh;
+  animation: note-bounce1 4s infinite cubic-bezier(0.8, -0.2, 0.5, 1.3);
+}
+.note-b2 {
+  left: 14vw;
+  top: 10vh;
+  animation: note-bounce2 4.8s 0.8s infinite cubic-bezier(0.8, -0.2, 0.5, 1.3);
+}
+.note-big::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: #fd96ff;
+  border-radius: 50%;
+}
+.note-big::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  bottom: 23px;
+  width: 7px;
+  height: 38px;
+  background: linear-gradient(180deg, #fd96ff 60%, #fff0 100%);
+  border-radius: 20px;
+  transform: rotate(-22deg);
+}
+@keyframes note-bounce1 {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-19px);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes note-bounce2 {
+  0% {
+    transform: translateY(0) scale(0.9);
+  }
+  25% {
+    transform: translateY(-39px) scale(1);
+  }
+  60% {
+    transform: translateY(-9px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(0.9);
+  }
+}
+
+/* Hình tam giác nhọn như nút Play hoặc decor */
+.triangle1,
+.triangle2 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  opacity: 0.1;
+  z-index: 0;
+  animation: triangle-move 7s infinite alternate;
+}
+.triangle1 {
+  left: 32vw;
+  top: 13vh;
+  border-width: 0 36px 60px 36px;
+  border-color: transparent transparent #fbb13c transparent;
+  animation-delay: 2s;
+}
+.triangle2 {
+  left: 84vw;
+  top: 89vh;
+  border-width: 0 22px 36px 22px;
+  border-color: transparent transparent #4f9deb transparent;
+  animation-delay: 0s;
+}
+@keyframes triangle-move {
+  0% {
+    filter: blur(0.8px);
+  }
+  100% {
+    filter: blur(3px) brightness(1.14);
+  }
+}
+.card,
+.card h2,
+.card p,
+.card a {
+  font-family: "Rock Salt", Arial, sans-serif !important;
+}
+.card {
+  background-color: #2a223a;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 367px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.45);
+  flex: 0 0 367px;
+  font-family: "Rock Salt", Arial, sans-serif !important;
+}
+.back-home-btn {
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  z-index: 9999;
+  background: #222e;
+  color: #ff6f61;
+  padding: 12px 20px 12px 16px;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s, color 0.25s;
+}
+
+.back-home-btn i {
+  font-size: 22px;
+}
+
+.back-home-btn:hover {
+  background: #ff6f61;
+  color: #fff;
+}

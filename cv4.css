@@ -1,0 +1,292 @@
+/* ===================== Reset và cấu hình cơ bản ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Thiết lập cơ bản cho body */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #1e1e2f;
+  color: #f0f0f0;
+  font-size: 15px;
+  line-height: 1.6;
+  display: flex;
+}
+
+/* ===================== Bố cục chính ===================== */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* ===================== Sidebar bên trái ===================== */
+.sidebar {
+  width: 250px;
+  background: #2b2d42;
+  padding: 30px 20px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+/* Ảnh đại diện với hiệu ứng 3D */
+.image-container {
+  perspective: 1000px;
+  margin-bottom: 15px;
+}
+.image-container img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00d8ff;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+.image-container:hover img {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 216, 255, 0.3);
+}
+
+/* Thông tin cá nhân */
+.sidebar h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.sidebar p {
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.sidebar-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+  width: 80%;
+}
+
+/* Menu điều hướng */
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sidebar li {
+  margin-bottom: 15px;
+}
+.sidebar a {
+  color: #00d8ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 6px 0;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+/* Icon trong menu */
+nav ul li a i {
+  margin-right: 8px;
+  color: #00f0ff;
+}
+
+/* ===================== Nội dung chính bên phải ===================== */
+.content {
+  margin-left: 270px;
+  padding: 40px 30px;
+  flex: 1;
+}
+
+/* Section nội dung với hiệu ứng vào */
+section {
+  margin-bottom: 50px;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Hiệu ứng phóng to nhẹ khi hover section */
+section:hover {
+  transform: scale(1.015);
+  transition: transform 0.3s ease;
+}
+
+/* Tiêu đề section */
+h2 {
+  color: #00d8ff;
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-bottom: 2px solid #00d8ff;
+  padding-bottom: 5px;
+}
+
+/* ===================== Kỹ năng ===================== */
+.skill {
+  margin: 15px 0;
+}
+.bar {
+  background: #444;
+  border-radius: 20px;
+  height: 18px;
+  overflow: hidden;
+}
+.fill {
+  background: #00d8ff;
+  height: 100%;
+  border-radius: 20px;
+  animation: growBar 2s ease-in-out;
+}
+
+/* ===================== Danh sách chung ===================== */
+ul li {
+  margin: 8px 0;
+  transition: transform 0.3s ease;
+}
+ul li:hover {
+  transform: translateX(8px);
+}
+
+/* ===================== Nút tải CV ===================== */
+.download-btn {
+  background: #00d8ff;
+  color: #000;
+  padding: 10px 22px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0, 216, 255, 0.3);
+  transition: background 0.3s;
+}
+.download-btn:hover {
+  background: #00a6cc;
+}
+
+/* ===================== Phần dự án mở rộng ===================== */
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #00d8ff;
+  margin-bottom: 10px;
+}
+details .project-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+details[open] .project-content {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-bottom: 20px;
+}
+.project-content img {
+  width: 95%;
+  max-width: 600px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #00d8ff;
+}
+
+/* ===================== Phần liên hệ ===================== */
+#contact p {
+  background-color: #2e2e40;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-left: 4px solid #00d8ff;
+  border-radius: 8px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+#contact p:hover {
+  background-color: #3a3a55;
+  transform: translateX(6px);
+}
+#contact a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+#contact a:hover {
+  text-decoration: underline;
+  color: #00d8ff;
+}
+#contact i {
+  color: #00d8ff;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+/* ===================== Icon chung ===================== */
+i {
+  margin-right: 6px;
+  color: #00d8ff;
+}
+
+/* ===================== Animation ===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes growBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ===================== Responsive cho thiết bị nhỏ ===================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .sidebar li {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
