@@ -1,248 +1,251 @@
 /* CSS cơ bản cho layout */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f8ff; /* Màu nền trang nhẹ nhàng */
-    transition: background-color 0.5s ease; /* Hiệu ứng chuyển màu nền */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Màu nền trang nhẹ nhàng */
+  transition: background-color 0.5s ease; /* Hiệu ứng chuyển màu nền */
 }
 
 header {
-    background-color: #007acc; /* Màu nền header */
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #007acc; /* Màu nền header */
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Phần Banner */
 .banner {
-    background-image: url('image/banner.jpg'); /* Thay đổi đường dẫn ảnh banner */
-    height: 200px;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 1s; /* Hiệu ứng xuất hiện cho banner */
+  background-image: url("img/banner.jpg"); /* Thay đổi đường dẫn ảnh banner */
+  height: 200px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1s; /* Hiệu ứng xuất hiện cho banner */
 }
 
 /* Hiệu ứng fadeIn */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #005f99; /* Màu nền navbar */
+  display: flex;
+  justify-content: center;
+  background-color: #005f99; /* Màu nền navbar */
 }
 
 .navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to */
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to */
 }
 
 .navbar a:hover {
-    background-color: #007acc; /* Màu nền khi hover */
-    transform: scale(1.1); /* Phóng to khi hover */
+  background-color: #007acc; /* Màu nền khi hover */
+  transform: scale(1.1); /* Phóng to khi hover */
 }
 
 .back-home-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s; /* Hiệu ứng chuyển màu cho nút quay lại */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s; /* Hiệu ứng chuyển màu cho nút quay lại */
 }
 
 .back-home-btn:hover {
-    color: #ffcc00; /* Màu khi hover */
+  color: #ffcc00; /* Màu khi hover */
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 section {
-    margin: 20px 0;
-    background: #e6f7ff; /* Màu nền nhẹ cho các phần nội dung */
-    color: #333; /* Màu chữ tối cho dễ đọc */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho section */
+  margin: 20px 0;
+  background: #e6f7ff; /* Màu nền nhẹ cho các phần nội dung */
+  color: #333; /* Màu chữ tối cho dễ đọc */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho section */
 }
 
 section:hover {
-    transform: translateY(-5px); /* Nâng lên khi hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+  transform: translateY(-5px); /* Nâng lên khi hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
 }
 
 h2 {
-    color: #005f99; /* Màu tiêu đề */
-    animation: slideIn 0.5s; /* Hiệu ứng xuất hiện cho tiêu đề */
+  color: #005f99; /* Màu tiêu đề */
+  animation: slideIn 0.5s; /* Hiệu ứng xuất hiện cho tiêu đề */
 }
 
 /* Hiệu ứng slideIn */
 @keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.skills-list, .hobbies-list {
-    display: flex;
-    flex-wrap: wrap;
+.skills-list,
+.hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.skill-item, .hobby-item {
-    flex: 1 1 45%;
-    margin: 10px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho kỹ năng và sở thích */
+.skill-item,
+.hobby-item {
+  flex: 1 1 45%;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho kỹ năng và sở thích */
 }
 
-.skill-item:hover, .hobby-item:hover {
-    transform: scale(1.05); /* Phóng to khi hover */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+.skill-item:hover,
+.hobby-item:hover {
+  transform: scale(1.05); /* Phóng to khi hover */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
 }
 
 .progress-bar {
-    background: #b3e0ff; /* Màu nền thanh kỹ năng */
-    border-radius: 5px;
-    overflow: hidden;
-    height: 20px;
-    position: relative;
+  background: #b3e0ff; /* Màu nền thanh kỹ năng */
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+  position: relative;
 }
 
 .progress-fill {
-    background: #007acc; /* Màu xanh nước biển cho phần tiến độ */
-    height: 100%;
-    transition: width 0.5s ease;
+  background: #007acc; /* Màu xanh nước biển cho phần tiến độ */
+  height: 100%;
+  transition: width 0.5s ease;
 }
 
 .project-cards {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .project-card {
-    flex: 1 1 45%;
-    margin: 10px;
-    padding: 15px;
-    background: #ffffff; /* Màu nền trắng cho thẻ dự án */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho thẻ dự án */
+  flex: 1 1 45%;
+  margin: 10px;
+  padding: 15px;
+  background: #ffffff; /* Màu nền trắng cho thẻ dự án */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho thẻ dự án */
 }
 
 .project-card:hover {
-    transform: scale(1.05); /* Phóng to khi hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Phóng to khi hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .project-image {
-    width: 100%; /* Đặt chiều rộng ảnh là 100% */
-    border-radius: 8px; /* Bo góc cho ảnh */
-    margin-bottom: 10px; /* Khoảng cách giữa ảnh và mô tả */
-    transition: transform 0.3s, filter 0.3s; /* Hiệu ứng chuyển động cho ảnh */
+  width: 100%; /* Đặt chiều rộng ảnh là 100% */
+  border-radius: 8px; /* Bo góc cho ảnh */
+  margin-bottom: 10px; /* Khoảng cách giữa ảnh và mô tả */
+  transition: transform 0.3s, filter 0.3s; /* Hiệu ứng chuyển động cho ảnh */
 }
 
 .project-image:hover {
-    transform: scale(1.05); /* Phóng to khi hover */
-    filter: brightness(1.1); /* Tăng độ sáng khi hover */
+  transform: scale(1.05); /* Phóng to khi hover */
+  filter: brightness(1.1); /* Tăng độ sáng khi hover */
 }
 
 .timeline {
-    position: relative;
-    padding: 10px 0;
+  position: relative;
+  padding: 10px 0;
 }
 
 .timeline-item {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
 }
 
 .timeline-item:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 10px;
-    height: 10px;
-    background: #007acc; /* Màu xanh nước biển cho dấu thời gian */
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background: #007acc; /* Màu xanh nước biển cho dấu thời gian */
+  border-radius: 50%;
 }
 
 .language-bar {
-    background: #b3e0ff; /* Màu nền thanh ngôn ngữ */
-    border-radius: 5px;
-    height: 20px;
-    position: relative;
-    margin: 5px 0;
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+  background: #b3e0ff; /* Màu nền thanh ngôn ngữ */
+  border-radius: 5px;
+  height: 20px;
+  position: relative;
+  margin: 5px 0;
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
 }
 
 .language-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #007acc; /* Màu nền footer */
-    color: white;
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền footer */
+  text-align: center;
+  padding: 10px;
+  background-color: #007acc; /* Màu nền footer */
+  color: white;
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền footer */
 }
 
 footer:hover {
-    background-color: #005f99; /* Màu nền khi hover */
+  background-color: #005f99; /* Màu nền khi hover */
 }
 
 section {
-    opacity: 0; /* Ẩn phần tử ban đầu */
-    transform: translateY(20px); /* Đẩy phần tử xuống một chút */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Hiệu ứng chuyển đổi */
+  opacity: 0; /* Ẩn phần tử ban đầu */
+  transform: translateY(20px); /* Đẩy phần tử xuống một chút */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Hiệu ứng chuyển đổi */
 }
 
 section.visible {
-    opacity: 1; /* Hiện phần tử */
-    transform: translateY(0); /* Trở về vị trí ban đầu */
+  opacity: 1; /* Hiện phần tử */
+  transform: translateY(0); /* Trở về vị trí ban đầu */
 }
 
 /* Các quy tắc CSS khác của bạn ở đây */
 /* Hiệu ứng tuyết rơi */
 .snowflake {
-    position: absolute;
-    top: -10px; /* Bắt đầu từ trên cùng */
-    color: white; /* Màu của bông tuyết */
-    font-size: 24px; /* Kích thước bông tuyết */
-    pointer-events: none; /* Không cho phép tương tác với bông tuyết */
-    animation: fall linear infinite; /* Hiệu ứng rơi */
+  position: absolute;
+  top: -10px; /* Bắt đầu từ trên cùng */
+  color: white; /* Màu của bông tuyết */
+  font-size: 24px; /* Kích thước bông tuyết */
+  pointer-events: none; /* Không cho phép tương tác với bông tuyết */
+  animation: fall linear infinite; /* Hiệu ứng rơi */
 }
 @keyframes fall {
-    to {
-        transform: translateY(100vh); /* Rơi xuống dưới cùng */
-    }
+  to {
+    transform: translateY(100vh); /* Rơi xuống dưới cùng */
+  }
 }
