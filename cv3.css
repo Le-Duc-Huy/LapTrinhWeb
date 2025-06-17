@@ -1,173 +1,248 @@
-/* Reset một số thuộc tính mặc định */
-* {
+/* CSS cơ bản cho layout */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f0f8ff; /* Màu nền trang nhẹ nhàng */
+    transition: background-color 0.5s ease; /* Hiệu ứng chuyển màu nền */
 }
 
-body {
-    background-image: url("image/backround.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-    color: #fff;
-}
-
-.main-container {
+header {
+    background-color: #007acc; /* Màu nền header */
+    color: white;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-}
-
-.profile-header {
     text-align: center;
 }
 
-.close-button {
+/* Phần Banner */
+.banner {
+    background-image: url('image/banner.jpg'); /* Thay đổi đường dẫn ảnh banner */
+    height: 200px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s; /* Hiệu ứng xuất hiện cho banner */
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #005f99; /* Màu nền navbar */
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to */
+}
+
+.navbar a:hover {
+    background-color: #007acc; /* Màu nền khi hover */
+    transform: scale(1.1); /* Phóng to khi hover */
+}
+
+.back-home-btn {
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s; /* Hiệu ứng chuyển màu cho nút quay lại */
 }
 
-.profile-image img {
-    width: 150px;
-    border-radius: 50%;
+.back-home-btn:hover {
+    color: #ffcc00; /* Màu khi hover */
 }
 
-.career-goals, .personal-projects, .certificates-activities, .hobbies, .language-skills, .contact-section {
-    text-align: center; /* Canh giữa tiêu đề */
-    margin-top: 20px;
-}
-
-.goal-item, .language-item {
-    display: inline-block; /* Để các mục nằm ngang */
-    margin: 0 20px; /* Khoảng cách giữa các mục */
-}
-
-.circular-progress {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.circular-progress svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(-90deg); /* Quay vòng tròn để bắt đầu từ trên cùng */
-}
-
-.circular-progress circle {
-    transition: stroke-dashoffset 1s ease; /* Thêm hiệu ứng chuyển động cho vòng tròn */
-}
-
-.skills-list {
+.main-container {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
-.skill-item {
+section {
+    margin: 20px 0;
+    background: #e6f7ff; /* Màu nền nhẹ cho các phần nội dung */
+    color: #333; /* Màu chữ tối cho dễ đọc */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho section */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Nâng lên khi hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+h2 {
+    color: #005f99; /* Màu tiêu đề */
+    animation: slideIn 0.5s; /* Hiệu ứng xuất hiện cho tiêu đề */
+}
+
+/* Hiệu ứng slideIn */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.skills-list, .hobbies-list {
     display: flex;
-    align-items: center;
-    margin: 10px 0;
+    flex-wrap: wrap;
 }
 
-.progress-bar-container {
-    flex-grow: 1;
-    background-color: #444;
-    border-radius: 5px;
-    margin-left: 10px;
-    height: 20px;
-    overflow: hidden; /* Đảm bảo thanh tiến độ không bị tràn ra ngoài */
+.skill-item, .hobby-item {
+    flex: 1 1 45%;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho kỹ năng và sở thích */
+}
+
+.skill-item:hover, .hobby-item:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
 }
 
 .progress-bar {
-    height: 100%;
-    background-color: #4caf50;
+    background: #b3e0ff; /* Màu nền thanh kỹ năng */
     border-radius: 5px;
-    width: 0; /* Bắt đầu từ 0% */
-    transition: width 1s ease; /* Thêm hiệu ứng chuyển động cho thanh tiến độ */
+    overflow: hidden;
+    height: 20px;
+    position: relative;
 }
 
-.project-grid {
-    display: flex; /* Sử dụng flexbox để canh giữa */
-    justify-content: center; /* Canh giữa các ảnh */
-    gap: 20px; /* Khoảng cách giữa các ảnh */
+.progress-fill {
+    background: #007acc; /* Màu xanh nước biển cho phần tiến độ */
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .project-card {
-    background-color: #222;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s;
-    width: 300px; /* Đặt chiều rộng cố định cho các thẻ dự án */
+    flex: 1 1 45%;
+    margin: 10px;
+    padding: 15px;
+    background: #ffffff; /* Màu nền trắng cho thẻ dự án */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động cho thẻ dự án */
 }
 
 .project-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Phóng to khi hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
+.project-image {
+    width: 100%; /* Đặt chiều rộng ảnh là 100% */
+    border-radius: 8px; /* Bo góc cho ảnh */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và mô tả */
+    transition: transform 0.3s, filter 0.3s; /* Hiệu ứng chuyển động cho ảnh */
 }
 
-.project-card h4 {
+.project-image:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+    filter: brightness(1.1); /* Tăng độ sáng khi hover */
+}
+
+.timeline {
+    position: relative;
+    padding: 10px 0;
+}
+
+.timeline-item {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline-item:before {
+    content: '';
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 5px;
+    left: 0;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background: #007acc; /* Màu xanh nước biển cho dấu thời gian */
+    border-radius: 50%;
+}
+
+.language-bar {
+    background: #b3e0ff; /* Màu nền thanh ngôn ngữ */
     border-radius: 5px;
+    height: 20px;
+    position: relative;
+    margin: 5px 0;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
 }
 
-.hobbies-icons-inline {
-    display: flex;
-    justify-content: center; /* Canh giữa các thẻ sở thích */
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.hobby-item-inline {
-    background-color: #333;
-    border-radius: 10px;
-    padding: 10px;
+.language-item {
     display: flex;
     align-items: center;
-    width: 120px;
-}
-
-.contact-buttons {
-    display: flex;
-    justify-content: center; /* Canh giữa các nút liên hệ */
-    gap: 10px;
-}
-
-.contact-button {
-    background-color: #444;
-    border-radius: 5px;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #555;
+    justify-content: space-between;
 }
 
 footer {
     text-align: center;
-    margin-top: 20px;
-    color: #ccc;
+    padding: 10px;
+    background-color: #007acc; /* Màu nền footer */
+    color: white;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền footer */
+}
+
+footer:hover {
+    background-color: #005f99; /* Màu nền khi hover */
+}
+
+section {
+    opacity: 0; /* Ẩn phần tử ban đầu */
+    transform: translateY(20px); /* Đẩy phần tử xuống một chút */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Hiệu ứng chuyển đổi */
+}
+
+section.visible {
+    opacity: 1; /* Hiện phần tử */
+    transform: translateY(0); /* Trở về vị trí ban đầu */
+}
+
+/* Các quy tắc CSS khác của bạn ở đây */
+/* Hiệu ứng tuyết rơi */
+.snowflake {
+    position: absolute;
+    top: -10px; /* Bắt đầu từ trên cùng */
+    color: white; /* Màu của bông tuyết */
+    font-size: 24px; /* Kích thước bông tuyết */
+    pointer-events: none; /* Không cho phép tương tác với bông tuyết */
+    animation: fall linear infinite; /* Hiệu ứng rơi */
+}
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Rơi xuống dưới cùng */
+    }
 }
