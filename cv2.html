@@ -11,17 +11,41 @@
     <div class="container">
       <aside class="sidebar">
         <header id="profile">
-          <img src="./img/AnhDaiDien.jpg" alt=" AnhDaiDien" width="150" />
-          <h1>Lê Đức Huy</h1>
-          <p>Fullstack Developer</p>
-          <p>&#9742; 0332249795</p>
-          <p>&#9993; leduchuy110105@gmail.com</p>
+          <img
+            src="./img/AnhDaiDien.jpg"
+            alt=" AnhDaiDien"
+            width="150"
+            loading="lazy"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          />
+          <h1 class="typing">Lê Đức Huy</h1>
+          <p class="typing">Fullstack Developer</p>
+          <div class="contact-icons">
+            <a href="mailto:leduchuy110105@gmail.com"
+              ><img src="./img/email.jpg" alt="email" width="40" title="Email"
+            /></a>
+            <a href="tel:0332249795" target="_blank"
+              ><img
+                src="./img/icon-dien-thoai.jpg"
+                alt="icon-dien-thoai"
+                width="60"
+                title="Số Điện Thoại"
+            /></a>
+            <a
+              href="https://www.facebook.com/uchuy.351935/"
+              target="_blank"
+              title="Facebook cua toi"
+              ><img src="./img/Facebook_Logo.png" alt="facebook" width="30"
+            /></a>
+          </div>
           <p>&#127968; Ho Chi Minh City,Viet Nam</p>
         </header>
         <!-- menu điều hướng -->
         <nav>
           <ul>
-            <li><a href="#profile">Giới Thiệu</a></li>
+            <li><a href="./index.html">Trang Chủ</a></li>
+            <li><a href="#about">Giới Thiệu</a></li>
             <li><a href="#career">Mục Tiêu</a></li>
             <li><a href="#skills">Kỹ Năng và Ngôn Ngữ</a></li>
             <li><a href="#interest">Sở Thích</a></li>
@@ -35,8 +59,20 @@
         </a>
       </aside>
       <main class="content">
+        <!-- Giới Thiệu -->
+        <section id="about" class="section-hover-effect">
+          <h2>Giới Thiệu</h2>
+          <p>
+            Tôi là <strong>Lê Đức Huy</strong>, sinh ngày 11/01/2005, hiện là
+            sinh viên năm 2 ngành <strong>Công nghệ Thông tin</strong> tại
+            <strong>Đại học Giao thông Vận tải TP.HCM (UTH)</strong>. Với tinh
+            thần học hỏi, tôi đang trau dồi kỹ năng lập trình web (HTML, CSS,
+            JavaScript, Java) và mong muốn được tham gia các dự án thực tế để
+            phát triển bản thân và đóng góp cho cộng đồng công nghệ.
+          </p>
+        </section>
         <!-- Mục Tiêu -->
-        <section id="career">
+        <section id="career" class="section-hover-effect">
           <h2>Mục Tiêu Nghề Nghiệp</h2>
           <p>
             Tôi mong muốn trở thành một lập trình viên Fullstack chuyên nghiệp,
@@ -47,56 +83,77 @@
           </p>
         </section>
         <!-- Kỹ Năng -->
-        <section id="skills">
+        <section id="skills" class="section-hover-effect">
           <h2>Kỹ Năng và Ngôn Ngữ</h2>
 
-          <dl>
-            <dt>Kỹ năng làm việc nhóm</dt>
-            <dd>
-              Có khả năng hợp tác hiệu quả với đồng đội, chia sẻ ý tưởng và giải
-              quyết vấn đề cùng nhau để đạt mục tiêu chung.
-            </dd>
+          <div class="skills-bar">
+            <div class="skill">
+              <label>HTML</label>
+              <p>
+                Nắm vững HTML và biết cách xây dựng cấu trúc trang web chuẩn,
+                hiểu các thẻ HTML5, semantic.
+              </p>
+              <div class="bar"><div class="progress html">90%</div></div>
+            </div>
 
-            <dt>HTML / CSS / JavaScript</dt>
-            <dd>
-              Nắm vững các khái niệm kỹ thuật cơ bản của lập trình viên và vận
-              dụng hiệu quả trong các bài tập thực tế. Đặc biệt, tôi có khả năng
-              hiểu và triển khai các dự án HTML một cách chuyên sâu.
-            </dd>
+            <div class="skill">
+              <label>CSS</label>
+              <p>
+                Biết cách làm giao diện đẹp với CSS, sử dụng Flexbox, Grid,
+                animation,...
+              </p>
+              <div class="bar"><div class="progress css">85%</div></div>
+            </div>
 
-            <dt>Java</dt>
-            <dd>
-              Hiểu rõ lập trình hướng đối tượng, lập trình đa luồng, áp dụng các
-              kỹ thuật trong Java để phát triển ứng dụng thực tế.
-            </dd>
-            <dt>SQL</dt>
-            <dd>
-              Thành thạo viết câu lệnh SQL cơ bản, có khả năng thiết kế, tối ưu
-              cơ sở dữ liệu .
-            </dd>
-            <dt>C++</dt>
-            <dd>
-              Hiểu rõ lập trình hướng đối tượng, sử dụng con trỏ, quản lý bộ nhớ
-              và phát triển các ứng dụng thực tế sử dụng C++.
-            </dd>
-          </dl>
+            <div class="skill">
+              <label>JavaScript</label>
+              <p>Có thể làm hiệu ứng, xử lý sự kiện DOM, validate form,...</p>
+              <div class="bar"><div class="progress js">70%</div></div>
+            </div>
+
+            <div class="skill">
+              <label>Java</label>
+              <p>
+                Hiểu rõ lập trình hướng đối tượng, dùng Java để tạo ứng dụng
+                quản lý có giao diện Swing.
+              </p>
+              <div class="bar"><div class="progress java">80%</div></div>
+            </div>
+
+            <div class="skill">
+              <label>SQL</label>
+              <p>
+                Có khả năng viết truy vấn SQL, thiết kế và tối ưu cơ sở dữ liệu.
+              </p>
+              <div class="bar"><div class="progress sql">75%</div></div>
+            </div>
+
+            <div class="skill">
+              <label>C++</label>
+              <p>
+                Hiểu con trỏ, quản lý bộ nhớ và các khái niệm OOP trong C++.
+              </p>
+              <div class="bar"><div class="progress cpp">70%</div></div>
+            </div>
+          </div>
         </section>
+
         <!-- Sở Thích -->
-        <section id="interest">
+        <section id="interest" class="section-hover-effect">
           <h2>Sở Thích</h2>
           <p>
             Nghe Truyện | Nghe Nhạc | Xem Phim | Phân Tích Code | Viết Code.
           </p>
         </section>
         <!-- Chứng Chỉ và Giải Thưởng -->
-        <section id="certificate">
+        <section id="certificate" class="section-hover-effect">
           <h2>Chứng Chỉ Và Giải Thưởng</h2>
           <ul class="no-bullet">
             <li>Chứng chỉ tin học cơ bản</li>
           </ul>
         </section>
         <!--  Dự Án-->
-        <section id="projects">
+        <section id="projects" class="section-hover-effect">
           <h2>Dự Án Cá Nhân</h2>
           <article>
             <h3>Ứng Dụng Đăng Ký Học Tập</h3>
@@ -118,12 +175,14 @@
               >
             </p>
             <h4>Giao Diện</h4>
-            <img
-              src="./img/DangKyHocTapForm.jpg"
-              alt="Giao Diện Đăng Ký Học Tập"
-              width="500"
-            />
-            <br />
+            <details>
+              <img
+                src="./img/DangKyHocTapForm.jpg"
+                alt="Giao Diện Đăng Ký Học Tập"
+                width="500"
+              />
+              <br />
+            </details>
             <h4>Source code</h4>
             <a
               href="https://github.com/Le-Duc-Huy/-ng-D-ng-ng-K-H-c-T-p"
@@ -144,12 +203,16 @@
               tạo bằng JavaSwing.
             </p>
             <h4>Giao Diện</h4>
-            <p><strong>Home</strong></p>
-            <img src="./img/HomeForm.jpg" alt="Home" />
-            <p><strong>Bán Hàng</strong></p>
+            <details>
+              <p><strong>Home</strong></p>
+              <img src="./img/HomeForm.jpg" alt="Home" />
+            </details>
+            <details>
+              <p><strong>Bán Hàng</strong></p>
 
-            <img src="./img/BangHangForm.jpg" alt="Thanh Toán Hóa Đơn" />
-            <br />
+              <img src="./img/BangHangForm.jpg" alt="Thanh Toán Hóa Đơn" />
+              <br />
+            </details>
             <h4>Source code</h4>
             <a
               href="https://github.com/Le-Duc-Huy/UngDungQuanLiBanDienThoaiJava"
@@ -159,7 +222,7 @@
           </article>
         </section>
 
-        <footer id="contact">
+        <footer id="contact" class="section-hover-effect">
           <h2>Liên Hệ</h2>
           <p>
             &#9993; Email:
@@ -180,11 +243,8 @@
             >
           </p>
         </footer>
-        <div class="fixed-buttons">
-          <a href="./index.html" class="btn-back">Trang Chủ</a>
-          <a href="./cv2.html" class="btn-top">Lên đầu trang</a>
-        </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -7,9 +7,61 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #b3e5fc; /* Màu nền xanh nhạt giống ảnh */
   color: #333;
   line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+
+  background: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* căn giữa ngang */
+  text-align: center; /* căn chữ giữa */
+  margin-bottom: 20px;
+}
+
+/* Tên cá nhân  */
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid #1976d2;
+  animation: typing 3s steps(30, end) forwards, remove-caret 0s 3s forwards;
+}
+
+/* Gõ chữ */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16ch;
+  }
+}
+
+/* Xóa con trỏ sau khi gõ */
+@keyframes remove-caret {
+  to {
+    border-right: none;
+  }
+}
+.contact-icons {
+  display: flex;
+  justify-content: center; /* căn giữa cả hàng ngang */
+  gap: 15px; /* khoảng cách giữa các icon */
+  margin-top: 20px;
+}
+
+.contact-icons img {
+  width: 40px; /* hoặc 50px tùy ý */
+  height: auto;
 }
 
 /* Container chia layout 2 cột */
@@ -21,6 +73,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
 }
 
 /* Sidebar bên trái */
@@ -28,11 +81,27 @@ body {
   width: 250px;
   background: #fff;
   padding: 20px;
+  overflow-y: auto; /* Cho phép cuộn dọc */
+  max-height: 100vh; /* Giới hạn chiều cao bằng chiều cao màn hình */
+  position: sticky; /* Giữ sidebar cố định khi cuộn */
+  top: 0;
+}
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .sidebar img {
   border-radius: 43%;
   margin-bottom: 10px;
+}
+.sidebar img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar h1 {
@@ -55,17 +124,27 @@ body {
 }
 
 .sidebar nav ul li a {
-  text-decoration: none;
-  color: #333;
+  display: inline-block;
+  width: 100%; /* Đảm bảo tất cả nút chiếm toàn bộ chiều ngang sidebar */
+  text-align: center; /* Căn giữa nội dung */
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
   font-weight: bold;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar nav ul li a:hover {
-  color: #1976d2;
+  background-color: #1565c0;
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .btn-download {
   display: inline-block;
+  width: 100%;
   background: #1976d2;
   color: #fff;
   text-decoration: none;
@@ -85,16 +164,29 @@ body {
   padding: 20px;
   background: #ffffff;
   border-left: 1px solid #ddd;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 /* Tiêu đề chính */
 .content h2 {
-  color: #1976d2;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #1976d2;
-  padding-bottom: 5px;
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transform: translateX(-30px);
+  animation: fadeSlideIn 1s ease forwards;
 }
-
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /* Định dạng danh sách kỹ năng */
 .content dl dt {
   font-weight: bold;
@@ -107,6 +199,82 @@ body {
   margin-bottom: 8px;
   color: #555;
 }
+.skills-bar {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.bar {
+  background: #e0e0e0;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Mặc định width = 0 */
+.progress {
+  height: 100%;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* căn % sang phải */
+  padding-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  color: white; /* mặc định màu chữ trắng */
+  overflow: hidden;
+  transition: width 1s ease-in-out;
+}
+
+.progress.html {
+  background: linear-gradient(to right, #f16529, #e44d26);
+}
+
+.progress.css {
+  background: linear-gradient(to right, #264de4, #2965f1);
+}
+
+.progress.js {
+  background: linear-gradient(to right, #f0db4f, #f7e018);
+  color: black;
+}
+
+.progress.java {
+  background: linear-gradient(to right, #5382a1, #3c6382);
+}
+
+.progress.sql {
+  background: linear-gradient(to right, #a66bbe, #6a1b9a);
+}
+
+.progress.cpp {
+  background: linear-gradient(to right, #004482, #0073cf);
+}
+
+/* Cấu trúc thanh kỹ năng giữ nguyên */
+.bar {
+  background: #e0e0e0;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
 /* Chứng Chỉ */
 .no-bullet {
   list-style: none;
@@ -141,6 +309,30 @@ body {
   margin: 10px 0;
   border-radius: 4px;
 }
+details {
+  margin-bottom: 15px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #1976d2;
+}
+
+details[open] summary {
+  color: #0d47a1;
+}
+
+details p {
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #444;
+}
 
 /* Footer */
 footer {
@@ -167,29 +359,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-/* Nút cố định ở góc trái dưới */
-.fixed-buttons {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.fixed-buttons a {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 14px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
-}
-
 .fixed-buttons a:hover {
   background-color: #0056b3;
 }
@@ -227,5 +396,28 @@ footer a:hover {
   .btn-top {
     padding: 10px;
     font-size: 14px;
+  }
+}
+/* Hiệu ứng khi di chuột vào từng section */
+.section-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.section-hover-effect:hover {
+  transform: scale(1.02); /* phóng nhẹ lên 2% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* đổ bóng mềm */
+}
+/* PDF hoàn chỉnh */
+@media print {
+  body {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .container,
+  .content,
+  .main {
+    height: auto !important;
+    overflow: visible !important;
   }
 }
